@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotización M-R Diseño y Remodelaciones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Encabezado -->
+    <header class="header">
+      <div class="company-info">
+        <h1>M-R DISEÑO Y REMODELACIONES</h1>
+        <p>NIT: 29741665 - 2</p>
+        <p id="fecha">Fecha: <span id="current-date"></span></p>
+        <p>Cliente: <input type="text" id="cliente" placeholder="Nombre del cliente"></p>
+      </div>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo de la empresa">
+      </div>
+    </header>
+
+    <!-- Nombre de la cotización -->
+    <div class="cotizacion-nombre">
+      <label for="nombre-cotizacion">Nombre de la Cotización:</label>
+      <input type="text" id="nombre-cotizacion" placeholder="Ejemplo: Remodelación Oficina">
+    </div>
+
+    <!-- Título de la cotización -->
+    <h2 class="title">COTIZACIÓN</h2>
+
+    <!-- Formulario de productos -->
+    <form id="cotizacion-form">
+      <table id="productos-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Descripción</th>
+            <th>Und</th>
+            <th>Valor Unitario</th>
+            <th>Cantidad</th>
+            <th>Valor Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se agregarán dinámicamente los productos -->
+        </tbody>
+      </table>
+      <button type="button" onclick="agregarProducto()">Agregar Producto</button>
+    </form>
+
+    <!-- Resumen de costos -->
+    <div class="resumen">
+      <h3>Resumen de Costos</h3>
+      <p>Subtotal: $<span id="subtotal">0</span></p>
+      <p>Gastos de Administración (6%): $<span id="gastos-admin">0</span></p>
+      <p>Gastos de Imprevistos (8%): $<span id="gastos-imprevistos">0</span></p>
+      <p>Gastos de Utilidad (4%): $<span id="gastos-utilidad">0</span></p>
+      <p>IVA sobre Utilidad (19%): $<span id="iva-utilidad">0</span></p>
+      <p><strong>Total: $<span id="total-final">0</span></strong></p>
+    </div>
+
+    <!-- Nota -->
+    <div class="observaciones">
+        <label for="nota">Nota (opcional):</label>
+        <textarea id="nota" rows="3" cols="50" placeholder="Escribe aquí una nota adicional..."></textarea>
+    </div>
+
+    <!-- Botón para descargar PDF -->
+    <button id="descargar-pdf">Descargar Cotización en PDF</button>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.26/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
